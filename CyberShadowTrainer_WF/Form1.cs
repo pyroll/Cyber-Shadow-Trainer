@@ -127,8 +127,8 @@ namespace CyberShadowTrainer_WF
                 savedYPos = playerPosition[1];
 
                 // Update UI
-                SavedXPosLabel.Text = playerPosition[0].ToString();
-                SavedYPosLabel.Text = playerPosition[1].ToString();
+                SavedXPosTextBox.Text = playerPosition[0].ToString();
+                SavedYPosTextBox.Text = playerPosition[1].ToString();
             }
             else
                 MessageBox.Show("Cyber Shadow must be running to Save Coordinates.");
@@ -139,8 +139,13 @@ namespace CyberShadowTrainer_WF
         {
             if (CSHacking.CheckIfProcOpen())
             {
-                // Write saved pos into memory
-                CSHacking.WritePlayerPOS(savedXPos.ToString(), savedYPos.ToString());
+                // Write current saved textbox data into memory
+
+                // X data
+                string xData = SavedXPosTextBox.Text;
+                string yData = SavedYPosTextBox.Text;
+
+                CSHacking.WritePlayerPOS(xData, yData);
             }
             else
                 MessageBox.Show("Cyber Shadow must be running to Load Coordinates.");
