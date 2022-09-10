@@ -1,11 +1,11 @@
 using CSHacking;
 using Memory;
+using System.Diagnostics;
 
 namespace CyberShadowTrainer_WF
 {
     public partial class MainForm : Form
     {
-        // TODO: Learn how to register/disable global hotkey for Save/Load Position
         public MainForm()
         {
             InitializeComponent();
@@ -55,7 +55,7 @@ namespace CyberShadowTrainer_WF
                     UILoadPlayerPos();
                 }
 
-                //MessageBox.Show("Hotkey has been pressed!");
+                Debug.Write("Hotkey has been pressed!");
             }
         }        
 

@@ -16,8 +16,7 @@ namespace CSHacking.Tests
         {
             CSHackingClass hackClass = new CSHackingClass();
             bool isProcessOpen = hackClass.CheckIfProcOpen();
-            Console.WriteLine(isProcessOpen);
-            //Console.WriteLine("HELLO");
+            Console.WriteLine(isProcessOpen);          
             Assert.IsTrue(isProcessOpen);
         }
 
