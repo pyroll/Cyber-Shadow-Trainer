@@ -142,7 +142,7 @@
             // 
             // SavePosBtn
             // 
-            this.SavePosBtn.Location = new System.Drawing.Point(8, 100);
+            this.SavePosBtn.Location = new System.Drawing.Point(12, 100);
             this.SavePosBtn.Name = "SavePosBtn";
             this.SavePosBtn.Size = new System.Drawing.Size(93, 23);
             this.SavePosBtn.TabIndex = 12;
@@ -152,7 +152,7 @@
             // 
             // LoadPosBtn
             // 
-            this.LoadPosBtn.Location = new System.Drawing.Point(125, 100);
+            this.LoadPosBtn.Location = new System.Drawing.Point(148, 100);
             this.LoadPosBtn.Name = "LoadPosBtn";
             this.LoadPosBtn.Size = new System.Drawing.Size(93, 23);
             this.LoadPosBtn.TabIndex = 13;
@@ -178,7 +178,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(297, 163);
+            this.ClientSize = new System.Drawing.Size(272, 133);
             this.Controls.Add(this.SavedYPosTextBox);
             this.Controls.Add(this.SavedXPosTextBox);
             this.Controls.Add(this.LoadPosBtn);
