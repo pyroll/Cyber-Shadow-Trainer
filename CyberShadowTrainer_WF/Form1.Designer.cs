@@ -59,6 +59,14 @@
             this.LockHPCheckBox = new System.Windows.Forms.CheckBox();
             this.LockSPCheckBox = new System.Windows.Forms.CheckBox();
             this.LockMoneyCheckBox = new System.Windows.Forms.CheckBox();
+            this.LoadWithValsCheckBox = new System.Windows.Forms.CheckBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.HPLoadPosTextBox = new System.Windows.Forms.TextBox();
+            this.SPLoadPosTextBox = new System.Windows.Forms.TextBox();
+            this.MoneyLoadPosTextBox = new System.Windows.Forms.TextBox();
+            this.SetLoadValuesCurrentBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -246,28 +254,28 @@
             // 
             // UpdateHPTextBox
             // 
-            this.UpdateHPTextBox.Location = new System.Drawing.Point(129, 31);
+            this.UpdateHPTextBox.Location = new System.Drawing.Point(147, 31);
             this.UpdateHPTextBox.Name = "UpdateHPTextBox";
             this.UpdateHPTextBox.Size = new System.Drawing.Size(100, 23);
             this.UpdateHPTextBox.TabIndex = 22;
             // 
             // UpdateSPTextBox
             // 
-            this.UpdateSPTextBox.Location = new System.Drawing.Point(129, 58);
+            this.UpdateSPTextBox.Location = new System.Drawing.Point(147, 58);
             this.UpdateSPTextBox.Name = "UpdateSPTextBox";
             this.UpdateSPTextBox.Size = new System.Drawing.Size(100, 23);
             this.UpdateSPTextBox.TabIndex = 23;
             // 
             // UpdateMoneyTextBox
             // 
-            this.UpdateMoneyTextBox.Location = new System.Drawing.Point(129, 85);
+            this.UpdateMoneyTextBox.Location = new System.Drawing.Point(147, 85);
             this.UpdateMoneyTextBox.Name = "UpdateMoneyTextBox";
             this.UpdateMoneyTextBox.Size = new System.Drawing.Size(100, 23);
             this.UpdateMoneyTextBox.TabIndex = 24;
             // 
             // UpdateHPBtn
             // 
-            this.UpdateHPBtn.Location = new System.Drawing.Point(235, 30);
+            this.UpdateHPBtn.Location = new System.Drawing.Point(253, 30);
             this.UpdateHPBtn.Name = "UpdateHPBtn";
             this.UpdateHPBtn.Size = new System.Drawing.Size(75, 23);
             this.UpdateHPBtn.TabIndex = 25;
@@ -277,7 +285,7 @@
             // 
             // UpdateSPBtn
             // 
-            this.UpdateSPBtn.Location = new System.Drawing.Point(235, 58);
+            this.UpdateSPBtn.Location = new System.Drawing.Point(253, 58);
             this.UpdateSPBtn.Name = "UpdateSPBtn";
             this.UpdateSPBtn.Size = new System.Drawing.Size(75, 23);
             this.UpdateSPBtn.TabIndex = 26;
@@ -287,7 +295,7 @@
             // 
             // UpdateMoneyBtn
             // 
-            this.UpdateMoneyBtn.Location = new System.Drawing.Point(235, 85);
+            this.UpdateMoneyBtn.Location = new System.Drawing.Point(253, 85);
             this.UpdateMoneyBtn.Name = "UpdateMoneyBtn";
             this.UpdateMoneyBtn.Size = new System.Drawing.Size(75, 23);
             this.UpdateMoneyBtn.TabIndex = 27;
@@ -298,7 +306,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(317, 9);
+            this.label10.Location = new System.Drawing.Point(335, 9);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(35, 15);
             this.label10.TabIndex = 28;
@@ -307,7 +315,7 @@
             // LockHPCheckBox
             // 
             this.LockHPCheckBox.AutoSize = true;
-            this.LockHPCheckBox.Location = new System.Drawing.Point(326, 34);
+            this.LockHPCheckBox.Location = new System.Drawing.Point(344, 34);
             this.LockHPCheckBox.Name = "LockHPCheckBox";
             this.LockHPCheckBox.Size = new System.Drawing.Size(15, 14);
             this.LockHPCheckBox.TabIndex = 29;
@@ -317,7 +325,7 @@
             // LockSPCheckBox
             // 
             this.LockSPCheckBox.AutoSize = true;
-            this.LockSPCheckBox.Location = new System.Drawing.Point(326, 62);
+            this.LockSPCheckBox.Location = new System.Drawing.Point(344, 62);
             this.LockSPCheckBox.Name = "LockSPCheckBox";
             this.LockSPCheckBox.Size = new System.Drawing.Size(15, 14);
             this.LockSPCheckBox.TabIndex = 30;
@@ -327,18 +335,94 @@
             // LockMoneyCheckBox
             // 
             this.LockMoneyCheckBox.AutoSize = true;
-            this.LockMoneyCheckBox.Location = new System.Drawing.Point(326, 89);
+            this.LockMoneyCheckBox.Location = new System.Drawing.Point(344, 89);
             this.LockMoneyCheckBox.Name = "LockMoneyCheckBox";
             this.LockMoneyCheckBox.Size = new System.Drawing.Size(15, 14);
             this.LockMoneyCheckBox.TabIndex = 31;
             this.LockMoneyCheckBox.UseVisualStyleBackColor = true;
             this.LockMoneyCheckBox.CheckedChanged += new System.EventHandler(this.LockMoneyCheckBox_CheckedChanged);
             // 
+            // LoadWithValsCheckBox
+            // 
+            this.LoadWithValsCheckBox.AutoSize = true;
+            this.LoadWithValsCheckBox.Location = new System.Drawing.Point(269, 125);
+            this.LoadWithValsCheckBox.Name = "LoadWithValsCheckBox";
+            this.LoadWithValsCheckBox.Size = new System.Drawing.Size(160, 19);
+            this.LoadWithValsCheckBox.TabIndex = 32;
+            this.LoadWithValsCheckBox.Text = "Load Position with Values";
+            this.LoadWithValsCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(269, 198);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(47, 15);
+            this.label11.TabIndex = 35;
+            this.label11.Text = "Money:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(269, 172);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(23, 15);
+            this.label12.TabIndex = 34;
+            this.label12.Text = "SP:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(269, 145);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(26, 15);
+            this.label13.TabIndex = 33;
+            this.label13.Text = "HP:";
+            // 
+            // HPLoadPosTextBox
+            // 
+            this.HPLoadPosTextBox.Location = new System.Drawing.Point(318, 142);
+            this.HPLoadPosTextBox.Name = "HPLoadPosTextBox";
+            this.HPLoadPosTextBox.Size = new System.Drawing.Size(24, 23);
+            this.HPLoadPosTextBox.TabIndex = 36;
+            // 
+            // SPLoadPosTextBox
+            // 
+            this.SPLoadPosTextBox.Location = new System.Drawing.Point(318, 167);
+            this.SPLoadPosTextBox.Name = "SPLoadPosTextBox";
+            this.SPLoadPosTextBox.Size = new System.Drawing.Size(24, 23);
+            this.SPLoadPosTextBox.TabIndex = 37;
+            // 
+            // MoneyLoadPosTextBox
+            // 
+            this.MoneyLoadPosTextBox.Location = new System.Drawing.Point(318, 193);
+            this.MoneyLoadPosTextBox.Name = "MoneyLoadPosTextBox";
+            this.MoneyLoadPosTextBox.Size = new System.Drawing.Size(24, 23);
+            this.MoneyLoadPosTextBox.TabIndex = 38;
+            // 
+            // SetLoadValuesCurrentBtn
+            // 
+            this.SetLoadValuesCurrentBtn.Location = new System.Drawing.Point(348, 194);
+            this.SetLoadValuesCurrentBtn.Name = "SetLoadValuesCurrentBtn";
+            this.SetLoadValuesCurrentBtn.Size = new System.Drawing.Size(81, 23);
+            this.SetLoadValuesCurrentBtn.TabIndex = 39;
+            this.SetLoadValuesCurrentBtn.Text = "Use Current";
+            this.SetLoadValuesCurrentBtn.UseVisualStyleBackColor = true;
+            this.SetLoadValuesCurrentBtn.Click += new System.EventHandler(this.SetLoadValuesCurrentBtn_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(373, 227);
+            this.ClientSize = new System.Drawing.Size(442, 227);
+            this.Controls.Add(this.SetLoadValuesCurrentBtn);
+            this.Controls.Add(this.MoneyLoadPosTextBox);
+            this.Controls.Add(this.SPLoadPosTextBox);
+            this.Controls.Add(this.HPLoadPosTextBox);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.LoadWithValsCheckBox);
             this.Controls.Add(this.LockMoneyCheckBox);
             this.Controls.Add(this.LockSPCheckBox);
             this.Controls.Add(this.LockHPCheckBox);
@@ -411,5 +495,13 @@
         private CheckBox LockHPCheckBox;
         private CheckBox LockSPCheckBox;
         private CheckBox LockMoneyCheckBox;
+        private CheckBox LoadWithValsCheckBox;
+        private Label label11;
+        private Label label12;
+        private Label label13;
+        private TextBox HPLoadPosTextBox;
+        private TextBox SPLoadPosTextBox;
+        private TextBox MoneyLoadPosTextBox;
+        private Button SetLoadValuesCurrentBtn;
     }
 }

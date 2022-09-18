@@ -180,18 +180,25 @@ namespace CyberShadowTrainer_WF
         {
             if (CSHacking.CheckIfProcOpen())
             {
-                // Write current saved textbox data into memory
-
-                // X data
+                // Write current saved textbox data into memory                
                 string xData = SavedXPosTextBox.Text;
                 string yData = SavedYPosTextBox.Text;
 
                 CSHacking.WritePlayerPOS(xData, yData);
+
+                // Also write other values if checkbox is checked
+                if (LoadWithValsCheckBox.Checked)
+                {
+                    CSHacking.WriteHP(HPLoadPosTextBox.Text);
+                    CSHacking.WriteSP(SPLoadPosTextBox.Text);
+                    CSHacking.WriteMoney(MoneyLoadPosTextBox.Text);
+                }
             }
             else
                 MessageBox.Show("Cyber Shadow must be running to Load Coordinates.");
         }
 
+        // Unregister HotKeys on Close
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             UnregisterHotKey(this.Handle, 0);
@@ -252,15 +259,12 @@ namespace CyberShadowTrainer_WF
                 moneyToLock = CurrentMoneyLabel.Text;
         }
 
-        //private void LockHPCheckBox_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    if(CSHacking.CheckIfProcOpen() && LockHPCheckBox.Checked)
-        //    {
-        //        // Get current value
-        //        string currentHP = CurrentHPLabel.Text;
+        private void SetLoadValuesCurrentBtn_Click(object sender, EventArgs e)
+        {
+            HPLoadPosTextBox.Text = CurrentHPLabel.Text;
+            SPLoadPosTextBox.Text = CurrentSPLabel.Text;
+            MoneyLoadPosTextBox.Text = CurrentMoneyLabel.Text;
+        }
 
-
-        //    }
-        //}
     }
 }
