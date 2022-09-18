@@ -312,6 +312,7 @@
             this.LockHPCheckBox.Size = new System.Drawing.Size(15, 14);
             this.LockHPCheckBox.TabIndex = 29;
             this.LockHPCheckBox.UseVisualStyleBackColor = true;
+            this.LockHPCheckBox.CheckedChanged += new System.EventHandler(this.LockHPCheckBox_CheckedChanged);
             // 
             // LockSPCheckBox
             // 
@@ -321,6 +322,7 @@
             this.LockSPCheckBox.Size = new System.Drawing.Size(15, 14);
             this.LockSPCheckBox.TabIndex = 30;
             this.LockSPCheckBox.UseVisualStyleBackColor = true;
+            this.LockSPCheckBox.CheckedChanged += new System.EventHandler(this.LockSPCheckBox_CheckedChanged);
             // 
             // LockMoneyCheckBox
             // 
@@ -330,6 +332,7 @@
             this.LockMoneyCheckBox.Size = new System.Drawing.Size(15, 14);
             this.LockMoneyCheckBox.TabIndex = 31;
             this.LockMoneyCheckBox.UseVisualStyleBackColor = true;
+            this.LockMoneyCheckBox.CheckedChanged += new System.EventHandler(this.LockMoneyCheckBox_CheckedChanged);
             // 
             // MainForm
             // 

@@ -19,6 +19,10 @@ namespace CyberShadowTrainer_WF
         public Mem m = new Mem();
         public CSHackingClass CSHacking = new CSHackingClass();
 
+        private string hpToLock;
+        private string spToLock;
+        private string moneyToLock;
+
         #region Global Hotkeys
 
         [System.Runtime.InteropServices.DllImport("user32.dll")]
@@ -110,7 +114,24 @@ namespace CyberShadowTrainer_WF
                     {
                         CurrentMoneyLabel.Text = money.ToString();
                     });
-                                                            
+                    
+                    // Check for activated checkboxes; write current value if
+                    // checked
+                    if (LockHPCheckBox.Checked)
+                    {
+                        // Write value
+                        CSHacking.WriteHP(hpToLock);
+                    }
+                    if (LockSPCheckBox.Checked)
+                    {
+                        // Write value
+                        CSHacking.WriteSP(spToLock);
+                    }
+                    if (LockMoneyCheckBox.Checked)
+                    {
+                        // Write value
+                        CSHacking.WriteMoney(moneyToLock);
+                    }
                 }
                 else
                     ProcessStatusLabel.Invoke((MethodInvoker)delegate
@@ -212,5 +233,34 @@ namespace CyberShadowTrainer_WF
                 CSHacking.WriteMoney(moneyValueToWrite);
             }
         }
+
+        private void LockHPCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (LockHPCheckBox.Checked)
+                hpToLock = CurrentHPLabel.Text;            
+        }
+
+        private void LockSPCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (LockSPCheckBox.Checked)
+                spToLock = CurrentSPLabel.Text;
+        }
+
+        private void LockMoneyCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (LockMoneyCheckBox.Checked)
+                moneyToLock = CurrentMoneyLabel.Text;
+        }
+
+        //private void LockHPCheckBox_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    if(CSHacking.CheckIfProcOpen() && LockHPCheckBox.Checked)
+        //    {
+        //        // Get current value
+        //        string currentHP = CurrentHPLabel.Text;
+
+
+        //    }
+        //}
     }
 }
