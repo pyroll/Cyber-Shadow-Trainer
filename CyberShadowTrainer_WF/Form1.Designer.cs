@@ -273,6 +273,7 @@
             this.UpdateHPBtn.TabIndex = 25;
             this.UpdateHPBtn.Text = "Update";
             this.UpdateHPBtn.UseVisualStyleBackColor = true;
+            this.UpdateHPBtn.Click += new System.EventHandler(this.UpdateHPBtn_Click);
             // 
             // UpdateSPBtn
             // 
@@ -282,6 +283,7 @@
             this.UpdateSPBtn.TabIndex = 26;
             this.UpdateSPBtn.Text = "Update";
             this.UpdateSPBtn.UseVisualStyleBackColor = true;
+            this.UpdateSPBtn.Click += new System.EventHandler(this.UpdateSPBtn_Click);
             // 
             // UpdateMoneyBtn
             // 
@@ -291,6 +293,7 @@
             this.UpdateMoneyBtn.TabIndex = 27;
             this.UpdateMoneyBtn.Text = "Update";
             this.UpdateMoneyBtn.UseVisualStyleBackColor = true;
+            this.UpdateMoneyBtn.Click += new System.EventHandler(this.UpdateMoneyBtn_Click);
             // 
             // label10
             // 

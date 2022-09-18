@@ -98,9 +98,19 @@ namespace CyberShadowTrainer_WF
                     double sp = CSHacking.ReadSPValue();
                     double money = CSHacking.ReadMoneyValue();
 
-                    CurrentHPLabel.Text = hp.ToString();
-                    CurrentSPLabel.Text = sp.ToString();
-                    CurrentMoneyLabel.Text = money.ToString();
+                    CurrentHPLabel.Invoke((MethodInvoker)delegate
+                    {
+                        CurrentHPLabel.Text = hp.ToString();
+                    });
+                    CurrentSPLabel.Invoke((MethodInvoker)delegate
+                    {
+                        CurrentSPLabel.Text = sp.ToString();
+                    });
+                    CurrentMoneyLabel.Invoke((MethodInvoker)delegate
+                    {
+                        CurrentMoneyLabel.Text = money.ToString();
+                    });
+                                                            
                 }
                 else
                     ProcessStatusLabel.Invoke((MethodInvoker)delegate
@@ -165,6 +175,42 @@ namespace CyberShadowTrainer_WF
         {
             UnregisterHotKey(this.Handle, 0);
             UnregisterHotKey(this.Handle, 1);
+        }
+
+        private void UpdateHPBtn_Click(object sender, EventArgs e)
+        {
+            // Check Proc is running
+            if (CSHacking.CheckIfProcOpen())
+            {
+                // Load Value from textbox into memory
+                // TODO: Confirm that value in textbox is valid (a number)
+                string hpValueToWrite = UpdateHPTextBox.Text;
+                CSHacking.WriteHP(hpValueToWrite);
+            }
+        }
+
+        private void UpdateSPBtn_Click(object sender, EventArgs e)
+        {
+            // Check Proc is running
+            if (CSHacking.CheckIfProcOpen())
+            {
+                // Load Value from textbox into memory
+                // TODO: Confirm that value in textbox is valid (a number)
+                string spValueToWrite = UpdateSPTextBox.Text;
+                CSHacking.WriteSP(spValueToWrite);
+            }
+        }
+
+        private void UpdateMoneyBtn_Click(object sender, EventArgs e)
+        {
+            // Check Proc is running
+            if (CSHacking.CheckIfProcOpen())
+            {
+                // Load Value from textbox into memory
+                // TODO: Confirm that value in textbox is valid (a number)
+                string moneyValueToWrite = UpdateMoneyTextBox.Text;
+                CSHacking.WriteMoney(moneyValueToWrite);
+            }
         }
     }
 }
