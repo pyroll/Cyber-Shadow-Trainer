@@ -73,6 +73,7 @@ namespace CyberShadowTrainer_WF
 
                 if (IsProcRunning)
                 {
+                    // Change text to 'OPEN'
                     ProcessStatusLabel.Invoke((MethodInvoker)delegate
                     {
                         ProcessStatusLabel.ForeColor = Color.DarkGreen;
@@ -91,6 +92,15 @@ namespace CyberShadowTrainer_WF
                     {
                         YPosLabel.Text = playerPosition[1].ToString();
                     });
+
+                    // Read and Update Current HP, SP, Money Labels
+                    double hp = CSHacking.ReadHPValue();
+                    double sp = CSHacking.ReadSPValue();
+                    double money = CSHacking.ReadMoneyValue();
+
+                    CurrentHPLabel.Text = hp.ToString();
+                    CurrentSPLabel.Text = sp.ToString();
+                    CurrentMoneyLabel.Text = money.ToString();
                 }
                 else
                     ProcessStatusLabel.Invoke((MethodInvoker)delegate

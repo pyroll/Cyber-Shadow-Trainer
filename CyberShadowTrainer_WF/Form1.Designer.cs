@@ -46,9 +46,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.CurrentHPLabel = new System.Windows.Forms.Label();
+            this.CurrentSPLabel = new System.Windows.Forms.Label();
+            this.CurrentMoneyLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -207,41 +207,41 @@
             this.label9.TabIndex = 18;
             this.label9.Text = "Current Money:";
             // 
-            // label10
+            // CurrentHPLabel
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(103, 33);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(14, 15);
-            this.label10.TabIndex = 19;
-            this.label10.Text = "#";
+            this.CurrentHPLabel.AutoSize = true;
+            this.CurrentHPLabel.Location = new System.Drawing.Point(103, 33);
+            this.CurrentHPLabel.Name = "CurrentHPLabel";
+            this.CurrentHPLabel.Size = new System.Drawing.Size(14, 15);
+            this.CurrentHPLabel.TabIndex = 19;
+            this.CurrentHPLabel.Text = "#";
             // 
-            // label11
+            // CurrentSPLabel
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(103, 48);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(14, 15);
-            this.label11.TabIndex = 20;
-            this.label11.Text = "#";
+            this.CurrentSPLabel.AutoSize = true;
+            this.CurrentSPLabel.Location = new System.Drawing.Point(103, 48);
+            this.CurrentSPLabel.Name = "CurrentSPLabel";
+            this.CurrentSPLabel.Size = new System.Drawing.Size(14, 15);
+            this.CurrentSPLabel.TabIndex = 20;
+            this.CurrentSPLabel.Text = "#";
             // 
-            // label12
+            // CurrentMoneyLabel
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(103, 64);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(14, 15);
-            this.label12.TabIndex = 21;
-            this.label12.Text = "#";
+            this.CurrentMoneyLabel.AutoSize = true;
+            this.CurrentMoneyLabel.Location = new System.Drawing.Point(103, 64);
+            this.CurrentMoneyLabel.Name = "CurrentMoneyLabel";
+            this.CurrentMoneyLabel.Size = new System.Drawing.Size(14, 15);
+            this.CurrentMoneyLabel.TabIndex = 21;
+            this.CurrentMoneyLabel.Text = "#";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(269, 227);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.CurrentMoneyLabel);
+            this.Controls.Add(this.CurrentSPLabel);
+            this.Controls.Add(this.CurrentHPLabel);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -288,8 +288,8 @@
         private Label label5;
         private Label label6;
         private Label label9;
-        private Label label10;
-        private Label label11;
-        private Label label12;
+        private Label CurrentHPLabel;
+        private Label CurrentSPLabel;
+        private Label CurrentMoneyLabel;
     }
 }
