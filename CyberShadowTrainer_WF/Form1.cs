@@ -19,6 +19,10 @@ namespace CyberShadowTrainer_WF
         public Mem m = new Mem();
         public CSHackingClass CSHacking = new CSHackingClass();
 
+        private string hpToLock;
+        private string spToLock;
+        private string moneyToLock;
+
         #region Global Hotkeys
 
         [System.Runtime.InteropServices.DllImport("user32.dll")]
@@ -73,6 +77,7 @@ namespace CyberShadowTrainer_WF
 
                 if (IsProcRunning)
                 {
+                    // Change text to 'OPEN'
                     ProcessStatusLabel.Invoke((MethodInvoker)delegate
                     {
                         ProcessStatusLabel.ForeColor = Color.DarkGreen;
@@ -91,6 +96,42 @@ namespace CyberShadowTrainer_WF
                     {
                         YPosLabel.Text = playerPosition[1].ToString();
                     });
+
+                    // Read and Update Current HP, SP, Money Labels
+                    double hp = CSHacking.ReadHPValue();
+                    double sp = CSHacking.ReadSPValue();
+                    double money = CSHacking.ReadMoneyValue();
+
+                    CurrentHPLabel.Invoke((MethodInvoker)delegate
+                    {
+                        CurrentHPLabel.Text = hp.ToString();
+                    });
+                    CurrentSPLabel.Invoke((MethodInvoker)delegate
+                    {
+                        CurrentSPLabel.Text = sp.ToString();
+                    });
+                    CurrentMoneyLabel.Invoke((MethodInvoker)delegate
+                    {
+                        CurrentMoneyLabel.Text = money.ToString();
+                    });
+                    
+                    // Check for activated checkboxes; write current value if
+                    // checked
+                    if (LockHPCheckBox.Checked)
+                    {
+                        // Write value
+                        CSHacking.WriteHP(hpToLock);
+                    }
+                    if (LockSPCheckBox.Checked)
+                    {
+                        // Write value
+                        CSHacking.WriteSP(spToLock);
+                    }
+                    if (LockMoneyCheckBox.Checked)
+                    {
+                        // Write value
+                        CSHacking.WriteMoney(moneyToLock);
+                    }
                 }
                 else
                     ProcessStatusLabel.Invoke((MethodInvoker)delegate
@@ -139,22 +180,91 @@ namespace CyberShadowTrainer_WF
         {
             if (CSHacking.CheckIfProcOpen())
             {
-                // Write current saved textbox data into memory
-
-                // X data
+                // Write current saved textbox data into memory                
                 string xData = SavedXPosTextBox.Text;
                 string yData = SavedYPosTextBox.Text;
 
                 CSHacking.WritePlayerPOS(xData, yData);
+
+                // Also write other values if checkbox is checked
+                if (LoadWithValsCheckBox.Checked)
+                {
+                    CSHacking.WriteHP(HPLoadPosTextBox.Text);
+                    CSHacking.WriteSP(SPLoadPosTextBox.Text);
+                    CSHacking.WriteMoney(MoneyLoadPosTextBox.Text);
+                }
             }
             else
                 MessageBox.Show("Cyber Shadow must be running to Load Coordinates.");
         }
 
+        // Unregister HotKeys on Close
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             UnregisterHotKey(this.Handle, 0);
             UnregisterHotKey(this.Handle, 1);
         }
+
+        private void UpdateHPBtn_Click(object sender, EventArgs e)
+        {
+            // Check Proc is running
+            if (CSHacking.CheckIfProcOpen())
+            {
+                // Load Value from textbox into memory
+                // TODO: Confirm that value in textbox is valid (a number)
+                string hpValueToWrite = UpdateHPTextBox.Text;
+                CSHacking.WriteHP(hpValueToWrite);
+            }
+        }
+
+        private void UpdateSPBtn_Click(object sender, EventArgs e)
+        {
+            // Check Proc is running
+            if (CSHacking.CheckIfProcOpen())
+            {
+                // Load Value from textbox into memory
+                // TODO: Confirm that value in textbox is valid (a number)
+                string spValueToWrite = UpdateSPTextBox.Text;
+                CSHacking.WriteSP(spValueToWrite);
+            }
+        }
+
+        private void UpdateMoneyBtn_Click(object sender, EventArgs e)
+        {
+            // Check Proc is running
+            if (CSHacking.CheckIfProcOpen())
+            {
+                // Load Value from textbox into memory
+                // TODO: Confirm that value in textbox is valid (a number)
+                string moneyValueToWrite = UpdateMoneyTextBox.Text;
+                CSHacking.WriteMoney(moneyValueToWrite);
+            }
+        }
+
+        private void LockHPCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (LockHPCheckBox.Checked)
+                hpToLock = CurrentHPLabel.Text;            
+        }
+
+        private void LockSPCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (LockSPCheckBox.Checked)
+                spToLock = CurrentSPLabel.Text;
+        }
+
+        private void LockMoneyCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (LockMoneyCheckBox.Checked)
+                moneyToLock = CurrentMoneyLabel.Text;
+        }
+
+        private void SetLoadValuesCurrentBtn_Click(object sender, EventArgs e)
+        {
+            HPLoadPosTextBox.Text = CurrentHPLabel.Text;
+            SPLoadPosTextBox.Text = CurrentSPLabel.Text;
+            MoneyLoadPosTextBox.Text = CurrentMoneyLabel.Text;
+        }
+
     }
 }

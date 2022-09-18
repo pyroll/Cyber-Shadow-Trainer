@@ -109,6 +109,16 @@ namespace CSHacking
 
         #region Write Value Methods
 
+        public void WriteHP(string valueToWrite)
+        {
+            m.WriteMemory(hpAdr, "double", valueToWrite);
+        }
+
+        public void WriteSP(string valueToWrite)
+        {
+            m.WriteMemory(spAdr, "double", valueToWrite);
+        }
+
         public void WriteMoney(string valueToWrite)
         {
             m.WriteMemory(moneyAdr, "double", valueToWrite);
