@@ -66,6 +66,7 @@ namespace CyberShadowTrainer_WF
         #endregion
 
         // Properties for saving coordinates
+        // TODO: Unused?
         private double savedXPos;
         private double savedYPos;
 

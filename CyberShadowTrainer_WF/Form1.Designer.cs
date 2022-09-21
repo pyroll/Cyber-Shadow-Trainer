@@ -67,6 +67,11 @@
             this.SPLoadPosTextBox = new System.Windows.Forms.TextBox();
             this.MoneyLoadPosTextBox = new System.Windows.Forms.TextBox();
             this.SetLoadValuesCurrentBtn = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.CurrentSubLabel = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.UpdateSubBtn = new System.Windows.Forms.Button();
+            this.LockSubHPCheckBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -410,11 +415,61 @@
             this.SetLoadValuesCurrentBtn.UseVisualStyleBackColor = true;
             this.SetLoadValuesCurrentBtn.Click += new System.EventHandler(this.SetLoadValuesCurrentBtn_Click);
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(7, 229);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(120, 15);
+            this.label14.TabIndex = 40;
+            this.label14.Text = "Current Sub Weapon:";
+            // 
+            // CurrentSubLabel
+            // 
+            this.CurrentSubLabel.AutoSize = true;
+            this.CurrentSubLabel.Location = new System.Drawing.Point(131, 229);
+            this.CurrentSubLabel.Name = "CurrentSubLabel";
+            this.CurrentSubLabel.Size = new System.Drawing.Size(28, 15);
+            this.CurrentSubLabel.TabIndex = 41;
+            this.CurrentSubLabel.Text = "###";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(10, 247);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 23);
+            this.comboBox1.TabIndex = 42;
+            // 
+            // UpdateSubBtn
+            // 
+            this.UpdateSubBtn.Location = new System.Drawing.Point(147, 247);
+            this.UpdateSubBtn.Name = "UpdateSubBtn";
+            this.UpdateSubBtn.Size = new System.Drawing.Size(128, 23);
+            this.UpdateSubBtn.TabIndex = 43;
+            this.UpdateSubBtn.Text = "Update Sub Weapon";
+            this.UpdateSubBtn.UseVisualStyleBackColor = true;
+            // 
+            // LockSubHPCheckBox
+            // 
+            this.LockSubHPCheckBox.AutoSize = true;
+            this.LockSubHPCheckBox.Location = new System.Drawing.Point(289, 250);
+            this.LockSubHPCheckBox.Name = "LockSubHPCheckBox";
+            this.LockSubHPCheckBox.Size = new System.Drawing.Size(93, 19);
+            this.LockSubHPCheckBox.TabIndex = 44;
+            this.LockSubHPCheckBox.Text = "Lock Sub HP";
+            this.LockSubHPCheckBox.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(442, 227);
+            this.ClientSize = new System.Drawing.Size(442, 284);
+            this.Controls.Add(this.LockSubHPCheckBox);
+            this.Controls.Add(this.UpdateSubBtn);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.CurrentSubLabel);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.SetLoadValuesCurrentBtn);
             this.Controls.Add(this.MoneyLoadPosTextBox);
             this.Controls.Add(this.SPLoadPosTextBox);
@@ -503,5 +558,10 @@
         private TextBox SPLoadPosTextBox;
         private TextBox MoneyLoadPosTextBox;
         private Button SetLoadValuesCurrentBtn;
+        private Label label14;
+        private Label CurrentSubLabel;
+        private ComboBox comboBox1;
+        private Button UpdateSubBtn;
+        private CheckBox LockSubHPCheckBox;
     }
 }
