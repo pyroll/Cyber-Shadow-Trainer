@@ -16,6 +16,9 @@ namespace CSHacking
         const string subWepIDAdr = "CyberShadow.exe+333EF80";
         const string xPOS = "CyberShadow.exe+32D84CC,0x8";
         const string yPOS = "CyberShadow.exe+32D84CC,0x10";
+        const string spDispHP = "CyberShadow.exe+32CAD9C,0x24,0x1C,0x20,0x1E0";
+        const string chargeHP = "CyberShadow.exe+32CD398,0x20,0x1E0";
+        const string swagHP = "CyberShadow.exe+32CF51C,0x20,0x200";
 
         #region Methods
 
@@ -140,7 +143,22 @@ namespace CSHacking
             WriteYPOS(yPos);
         }
 
+        public void WriteSubHP(string adr, string value)
+        {
+            m.WriteMemory(adr, "double", value);
+        }
+
         #region Give Sub Weps Methods
+
+        public void GiveSubWeapon(string name, string id)
+        {
+            byte[] bytes = new byte[14];
+
+            // TODO: Write 14 bytes of zeros to clear memory space
+            m.WriteBytes(subWepNameAdr, bytes);
+            m.WriteMemory(subWepNameAdr, "string", name);
+            m.WriteMemory(subWepIDAdr, "int", id);
+        }
 
         public void GiveSPDispenser()
         {
