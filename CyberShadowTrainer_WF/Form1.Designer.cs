@@ -69,9 +69,10 @@
             this.SetLoadValuesCurrentBtn = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.CurrentSubLabel = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.SubWepComboBox = new System.Windows.Forms.ComboBox();
             this.UpdateSubBtn = new System.Windows.Forms.Button();
             this.LockSubHPCheckBox = new System.Windows.Forms.CheckBox();
+            this.LockSubWepCheckBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -433,13 +434,14 @@
             this.CurrentSubLabel.TabIndex = 41;
             this.CurrentSubLabel.Text = "###";
             // 
-            // comboBox1
+            // SubWepComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(10, 247);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 23);
-            this.comboBox1.TabIndex = 42;
+            this.SubWepComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SubWepComboBox.FormattingEnabled = true;
+            this.SubWepComboBox.Location = new System.Drawing.Point(10, 247);
+            this.SubWepComboBox.Name = "SubWepComboBox";
+            this.SubWepComboBox.Size = new System.Drawing.Size(121, 23);
+            this.SubWepComboBox.TabIndex = 42;
             // 
             // UpdateSubBtn
             // 
@@ -449,6 +451,7 @@
             this.UpdateSubBtn.TabIndex = 43;
             this.UpdateSubBtn.Text = "Update Sub Weapon";
             this.UpdateSubBtn.UseVisualStyleBackColor = true;
+            this.UpdateSubBtn.Click += new System.EventHandler(this.UpdateSubBtn_Click);
             // 
             // LockSubHPCheckBox
             // 
@@ -460,14 +463,26 @@
             this.LockSubHPCheckBox.Text = "Lock Sub HP";
             this.LockSubHPCheckBox.UseVisualStyleBackColor = true;
             // 
+            // LockSubWepCheckBox
+            // 
+            this.LockSubWepCheckBox.AutoSize = true;
+            this.LockSubWepCheckBox.Location = new System.Drawing.Point(289, 229);
+            this.LockSubWepCheckBox.Name = "LockSubWepCheckBox";
+            this.LockSubWepCheckBox.Size = new System.Drawing.Size(121, 19);
+            this.LockSubWepCheckBox.TabIndex = 45;
+            this.LockSubWepCheckBox.Text = "Lock Sub Weapon";
+            this.LockSubWepCheckBox.UseVisualStyleBackColor = true;
+            this.LockSubWepCheckBox.CheckedChanged += new System.EventHandler(this.LockSubWepCheckBox_CheckedChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(442, 284);
+            this.Controls.Add(this.LockSubWepCheckBox);
             this.Controls.Add(this.LockSubHPCheckBox);
             this.Controls.Add(this.UpdateSubBtn);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.SubWepComboBox);
             this.Controls.Add(this.CurrentSubLabel);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.SetLoadValuesCurrentBtn);
@@ -560,8 +575,9 @@
         private Button SetLoadValuesCurrentBtn;
         private Label label14;
         private Label CurrentSubLabel;
-        private ComboBox comboBox1;
+        private ComboBox SubWepComboBox;
         private Button UpdateSubBtn;
         private CheckBox LockSubHPCheckBox;
+        private CheckBox LockSubWepCheckBox;
     }
 }
