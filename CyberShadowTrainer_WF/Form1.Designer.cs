@@ -67,6 +67,12 @@
             this.SPLoadPosTextBox = new System.Windows.Forms.TextBox();
             this.MoneyLoadPosTextBox = new System.Windows.Forms.TextBox();
             this.SetLoadValuesCurrentBtn = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.CurrentSubLabel = new System.Windows.Forms.Label();
+            this.SubWepComboBox = new System.Windows.Forms.ComboBox();
+            this.UpdateSubBtn = new System.Windows.Forms.Button();
+            this.LockSubHPCheckBox = new System.Windows.Forms.CheckBox();
+            this.LockSubWepCheckBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -410,11 +416,75 @@
             this.SetLoadValuesCurrentBtn.UseVisualStyleBackColor = true;
             this.SetLoadValuesCurrentBtn.Click += new System.EventHandler(this.SetLoadValuesCurrentBtn_Click);
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(7, 229);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(120, 15);
+            this.label14.TabIndex = 40;
+            this.label14.Text = "Current Sub Weapon:";
+            // 
+            // CurrentSubLabel
+            // 
+            this.CurrentSubLabel.AutoSize = true;
+            this.CurrentSubLabel.Location = new System.Drawing.Point(131, 229);
+            this.CurrentSubLabel.Name = "CurrentSubLabel";
+            this.CurrentSubLabel.Size = new System.Drawing.Size(28, 15);
+            this.CurrentSubLabel.TabIndex = 41;
+            this.CurrentSubLabel.Text = "###";
+            // 
+            // SubWepComboBox
+            // 
+            this.SubWepComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SubWepComboBox.FormattingEnabled = true;
+            this.SubWepComboBox.Location = new System.Drawing.Point(10, 247);
+            this.SubWepComboBox.Name = "SubWepComboBox";
+            this.SubWepComboBox.Size = new System.Drawing.Size(121, 23);
+            this.SubWepComboBox.TabIndex = 42;
+            // 
+            // UpdateSubBtn
+            // 
+            this.UpdateSubBtn.Location = new System.Drawing.Point(147, 247);
+            this.UpdateSubBtn.Name = "UpdateSubBtn";
+            this.UpdateSubBtn.Size = new System.Drawing.Size(128, 23);
+            this.UpdateSubBtn.TabIndex = 43;
+            this.UpdateSubBtn.Text = "Update Sub Weapon";
+            this.UpdateSubBtn.UseVisualStyleBackColor = true;
+            this.UpdateSubBtn.Click += new System.EventHandler(this.UpdateSubBtn_Click);
+            // 
+            // LockSubHPCheckBox
+            // 
+            this.LockSubHPCheckBox.AutoSize = true;
+            this.LockSubHPCheckBox.Location = new System.Drawing.Point(289, 250);
+            this.LockSubHPCheckBox.Name = "LockSubHPCheckBox";
+            this.LockSubHPCheckBox.Size = new System.Drawing.Size(93, 19);
+            this.LockSubHPCheckBox.TabIndex = 44;
+            this.LockSubHPCheckBox.Text = "Lock Sub HP";
+            this.LockSubHPCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // LockSubWepCheckBox
+            // 
+            this.LockSubWepCheckBox.AutoSize = true;
+            this.LockSubWepCheckBox.Location = new System.Drawing.Point(289, 229);
+            this.LockSubWepCheckBox.Name = "LockSubWepCheckBox";
+            this.LockSubWepCheckBox.Size = new System.Drawing.Size(121, 19);
+            this.LockSubWepCheckBox.TabIndex = 45;
+            this.LockSubWepCheckBox.Text = "Lock Sub Weapon";
+            this.LockSubWepCheckBox.UseVisualStyleBackColor = true;
+            this.LockSubWepCheckBox.CheckedChanged += new System.EventHandler(this.LockSubWepCheckBox_CheckedChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(442, 227);
+            this.ClientSize = new System.Drawing.Size(442, 284);
+            this.Controls.Add(this.LockSubWepCheckBox);
+            this.Controls.Add(this.LockSubHPCheckBox);
+            this.Controls.Add(this.UpdateSubBtn);
+            this.Controls.Add(this.SubWepComboBox);
+            this.Controls.Add(this.CurrentSubLabel);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.SetLoadValuesCurrentBtn);
             this.Controls.Add(this.MoneyLoadPosTextBox);
             this.Controls.Add(this.SPLoadPosTextBox);
@@ -503,5 +573,11 @@
         private TextBox SPLoadPosTextBox;
         private TextBox MoneyLoadPosTextBox;
         private Button SetLoadValuesCurrentBtn;
+        private Label label14;
+        private Label CurrentSubLabel;
+        private ComboBox SubWepComboBox;
+        private Button UpdateSubBtn;
+        private CheckBox LockSubHPCheckBox;
+        private CheckBox LockSubWepCheckBox;
     }
 }
